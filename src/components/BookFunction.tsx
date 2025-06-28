@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Calendar, Clock as ClockIcon, Users, X, Mail, Utensils } from 'lucide-react';
-import { CONTACT_QUOTE_EMAIL, BRAND_NAME } from '../globals'; // Removed unused LOGO import
+import { CONTACT_QUOTE_EMAIL, BRAND_NAME, HREF_LINK_DPC_RESERVE } from '../globals'; // Removed unused LOGO import
 import { ScrollAnimation } from './animations/ScrollAnimation';
 
 interface ReservationDetails {
@@ -343,7 +343,7 @@ export const ReserveCTA = () => {
               Join us for an exceptional soundscape experience. Make an enquiry today.
             </p>
             <a
-              href="/dpc/reserve"
+              href={HREF_LINK_DPC_RESERVE}
               className="w-full py-4 px-6 bg-background hover:bg-primary/90 text-content-primary text-lg font-medium rounded-lg transition-colors flex items-center justify-center gap-2"
             >
               <Calendar className="w-5 h-5" />
