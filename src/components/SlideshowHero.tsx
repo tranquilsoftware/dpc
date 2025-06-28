@@ -97,22 +97,31 @@ export default function Hero() {
               />
             </motion.div>
 
-            <motion.h1 
-              className="mb-4 text-8xl md:text-9xl text-white font-bold drop-shadow-lg"
-              style={{ fontFamily: 'Bellefair', textShadow: '0 2px 10px rgba(0,0,0,0.5)' }} 
+            <motion.div 
+              className="w-full overflow-hidden"
               initial={{ scale: 0.9 }}
               animate={{ scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
             >
-              {BRAND_NAME}
-            </motion.h1>
+              <h1 
+                className="mb-4 text-6xl xs:text-7xl sm:text-8xl md:text-9xl text-white font-bold drop-shadow-lg whitespace-nowrap"
+                style={{ 
+                  fontFamily: 'Bellefair', 
+                  textShadow: '0 2px 10px rgba(0,0,0,0.5)',
+                  width: 'fit-content',
+                  margin: '0 auto'
+                }}
+              >
+                {BRAND_NAME}
+              </h1>
+            </motion.div>
 
             {/* DESCRIPTION */}
             <motion.p 
               className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto px-4 backdrop-blur-sm bg-black/20 py-2 rounded-lg"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 1 }}
+              transition={{ duration: 0.8, delay: 2 }}
             >
               {BRIEF_DESCRIPTION}
             </motion.p>

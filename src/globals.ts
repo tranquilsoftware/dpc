@@ -27,7 +27,7 @@ export const FACEBOOK_LINK = `https://www.facebook.com/profile.php?id=6156050771
 // export const HREF_HOME_LINK = 'https://dillpicklelaunceston.com/'; // todo change in prod
 export const HREF_HOME_LINK = '/'; // todo change in prod
 export const TRANQUILSOFTWARE_LINK = 'https://tranquilsoftware.com/';
-export const HREF_LINK_DPC_RESERVE = '/dpc/reserve';
+export const HREF_LINK_DPC_RESERVE = '/reserve';
 
 
 // IMAGE LINKS @ https://imgur.com/a/435jIUT

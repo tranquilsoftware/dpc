@@ -8,6 +8,15 @@ export default defineConfig({
   publicDir: 'public',
   build: {
     outDir: 'dist',
-    copyPublicDir: true
-  }
+    copyPublicDir: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          react: ['react', 'react-dom', 'react-router-dom'],
+          framer: ['framer-motion'],
+        },
+      },
+    },
+  },
+
 })

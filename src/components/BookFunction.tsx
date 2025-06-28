@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Calendar, Clock as ClockIcon, Users, X, Mail, Utensils } from 'lucide-react';
 import { CONTACT_QUOTE_EMAIL, BRAND_NAME, HREF_LINK_DPC_RESERVE } from '../globals'; // Removed unused LOGO import
 import { ScrollAnimation } from './animations/ScrollAnimation';
@@ -327,6 +328,14 @@ ${formData.specialRequests || 'None'}
 };
 
 export const ReserveCTA = () => {
+  const navigate = useNavigate();
+  
+  const handleReserveClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    navigate(HREF_LINK_DPC_RESERVE);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <ScrollAnimation delay={0.2} direction="left">
     <section className="py-12 bg-background">
@@ -342,13 +351,13 @@ export const ReserveCTA = () => {
             <p className="text-primary/80 mb-8">
               Join us for an exceptional soundscape experience. Make an enquiry today.
             </p>
-            <a
-              href={HREF_LINK_DPC_RESERVE}
+            <button
+              onClick={handleReserveClick}
               className="w-full py-4 px-6 bg-background hover:bg-primary/90 text-content-primary text-lg font-medium rounded-lg transition-colors flex items-center justify-center gap-2"
             >
               <Calendar className="w-5 h-5" />
               Book a Function Now
-            </a>
+            </button>
           </div>
         </div>
       </div>
