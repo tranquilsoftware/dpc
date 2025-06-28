@@ -3,7 +3,7 @@
 export const BRAND_NAME = 'Dill Pickle Club';
 
 export const OWNER_NAME = 'David & Robyn';
-export const BRIEF_DESCRIPTION = 'A listening bar in the heart of Launceston Tasmania.';
+export const BRIEF_DESCRIPTION = 'A listening bar in the heart of Launceston, Tasmania';
 
 export const LOGO = 'assets/images/dill-pickle-club-logo.png'; // 2048x2048 see views: https://imgur.com/a/AIJEMnd
 export const SMALL_LOGO = 'assets/images/dill-pickle-club-logo-small.png'; // 128x128 see views: https://imgur.com/a/ZpAPk1B
@@ -24,7 +24,8 @@ export const INSTAGRAM_LINK = `https://www.instagram.com/${INSTAGRAM_USERNAME}/`
 export const FACEBOOK_LINK = `https://www.facebook.com/profile.php?id=61560507715534`;
 
 // href links
-export const HREF_HOME_LINK = 'https://dillpicklelaunceston.com/'; // todo change in prod
+// export const HREF_HOME_LINK = 'https://dillpicklelaunceston.com/'; // todo change in prod
+export const HREF_HOME_LINK = '/'; // todo change in prod
 export const TRANQUILSOFTWARE_LINK = 'https://tranquilsoftware.com/';
 
 

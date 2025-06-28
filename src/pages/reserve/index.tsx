@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
-import Header from '../../components/Header'
-import Footer from '../../components/Footer'
-import BookFunction from '../../components/BookFunction'
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+import BookFunction from '../../components/BookFunction';
+// Update the image import path according to your project structure
+import { BAR_3 } from '../../globals';
 
 const pageVariants = {
   initial: {
@@ -37,10 +39,18 @@ function Reserve() {
     >
       <Header/>
 
-      <div className="h-40"/>
-      <BookFunction/>
-
-      {/* <div className="h-80" /> */}
+      {/* <div className="container mx-auto px-4 py-8"> */}
+        {/* <div className="max-w-4xl mx-auto"> */}
+          <img 
+            src={BAR_3} 
+            alt="Bar Area" 
+            className="w-full h-[400px] object-cover rounded-lg shadow-lg mb-8"
+            style={{ maxWidth: '100%', height: '400px' }}
+          />
+          <BookFunction/>
+        {/* </div> */}
+      {/* </div> */}
+      
       <Footer/>
     </motion.div>
   )

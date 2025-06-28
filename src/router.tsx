@@ -22,9 +22,13 @@ export const router = createBrowserRouter([
         path: '/reserve',
         element: <Reserve/>,
       }
-    ],
+    ]
   },
-]);
+],
+{
+  basename: '/dpc/'
+}
+);
 
 
 // export const router = createBrowserRouter(

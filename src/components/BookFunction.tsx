@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Calendar, Clock as ClockIcon, Users, X, Mail, Utensils } from 'lucide-react';
-import { CONTACT_QUOTE_EMAIL, BRAND_NAME, BAR_3 } from '../globals'; // Removed unused LOGO import
+import { CONTACT_QUOTE_EMAIL, BRAND_NAME } from '../globals'; // Removed unused LOGO import
 import { ScrollAnimation } from './animations/ScrollAnimation';
 
 interface ReservationDetails {
@@ -91,7 +91,7 @@ ${formData.specialRequests || 'None'}
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4 text-content-primary">
-            Booking a function?
+            Enquire about a function or table
           </h2>
           <p className="text-lg text-content-primary max-w-2xl mx-auto">
             Book your table at {BRAND_NAME} for an unforgettable soundscape experience
@@ -326,4 +326,34 @@ ${formData.specialRequests || 'None'}
   );
 };
 
+export const ReserveCTA = () => {
+  return (
+    <ScrollAnimation delay={0.2} direction="left">
+    <section className="py-12 bg-background">
+      <div className="container mx-auto px-4">
+        <div className="bg-background-dark rounded-2xl overflow-hidden border border-border shadow-lg p-8 w-full max-w-2xl mx-auto">
+          <div className="text-center">
+            <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
+              <Utensils className="w-10 h-10 text-primary" />
+            </div>
+            <h2 className="text-3xl font-bold text-primary mb-2">
+              Enquire About a Function or Table
+            </h2>
+            <p className="text-primary/80 mb-8">
+              Join us for an exceptional soundscape experience. Make an enquiry today.
+            </p>
+            <a
+              href="/dpc/reserve"
+              className="w-full py-4 px-6 bg-background hover:bg-primary/90 text-content-primary text-lg font-medium rounded-lg transition-colors flex items-center justify-center gap-2"
+            >
+              <Calendar className="w-5 h-5" />
+              Book a Function Now
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    </ScrollAnimation>
+  );
+};
 export default TableReservation;

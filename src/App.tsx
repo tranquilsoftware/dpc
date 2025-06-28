@@ -1,16 +1,15 @@
 import './App.css'
 import { motion } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
+import { useLayoutEffect } from 'react';
 import Header from './components/Header'
 import SlideshowHero from './components/SlideshowHero'
 import About from './components/About'
 import Footer from './components/Footer'
 
-// import Team from './components/Team'
-// import { GalleryViewer } from './components/GalleryViewer'
-import BookFunction from './components/BookFunction'
+import { ReserveCTA } from './components/BookFunction'
 import SocialSection from './components/SocialSection'
-import FAQ from './components/FAQ'
+// import FAQ from './components/FAQ'
 import GoogleMapEmbed from './components/GoogleMapEmbed'
 
 const pageVariants = {
@@ -34,6 +33,26 @@ const pageTransition = {
 function App() {
   const location = useLocation();
 
+  // Handle scroll to element when navigating with hash or state
+  useLayoutEffect(() => {
+    if (location.hash) {
+      const element = document.getElementById(location.hash.substring(1));
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else if (location.state?.scrollTo) {
+      const element = document.getElementById(location.state.scrollTo);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        // Clear the state after scrolling to prevent re-triggering
+        window.history.replaceState({}, document.title);
+      }
+    } else {
+      // Scroll to top when navigating to a new page
+      window.scrollTo(0, 0);
+    }
+  }, [location]);
+
   return (
     <motion.div
       key={location.pathname}
@@ -49,14 +68,15 @@ function App() {
       <SlideshowHero/>
 
 
-      {/* <div className="h-20"/> */}
+      <div className="h-10"/>
       <About/>
 
       {/* <div className="h-20"/>
       <GalleryViewer/> */}
 
-      <div className="h-40"/>
-      <BookFunction/>
+      <div className="h-20"/>
+      <ReserveCTA/>
+      {/* <BookFunction/> */}
 
 
       {/*  Doesnt want testimonials
@@ -67,33 +87,21 @@ function App() {
       {/* <div className="h-40"/>
       <Team/> */}
 
-      <div className="h-40"/>
-      <FAQ/>
+      {/* <div className="h-40"/> */}
+      {/* <FAQ/> */}
 
+      <div className="h-20"/>
+      <SocialSection/>
+      
       <GoogleMapEmbed 
         className="rounded-lg shadow-xl overflow-hidden"
         height="400px"
       />
 
-      <div className="h-20"/>
-      <SocialSection/>
 
-      {/* <div className="h-80" /> */}
       <Footer/>
     </motion.div>
   )
 }
-
-// Function to check WebGL support
-// function isWebGLSupported() {
-//   try {
-//     const canvas = document.createElement('canvas');
-//     return !!(window.WebGLRenderingContext && (
-//       canvas.getContext('webgl') || canvas.getContext('experimental-webgl')
-//     ));
-//   } catch (e) {
-//     return false;
-//   }
-// }
 
 export default App

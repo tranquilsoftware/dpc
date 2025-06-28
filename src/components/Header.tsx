@@ -8,22 +8,22 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const location = useLocation()
   const navigate = useNavigate()
-  const [isScrollingUp, setIsScrollingUp] = useState(true)
+  // const [isScrollingUp, setIsScrollingUp] = useState(true)
   const [isIOS, setIsIOS] = useState(false)
   
   // Header dimensions and styles based on scroll direction
-  const headerHeight = isScrollingUp ? 72 : 56; // Slightly larger initial height for better visibility
-  const headerFontSize = isScrollingUp ? '1.5rem' : '1.25rem';
-  const logoSize = isScrollingUp ? '2.5rem' : '2rem';
-  const paddingY = isScrollingUp ? '1rem' : '0.75rem'; // Adjust padding for the height change
+  // const headerHeight = isScrollingUp ? 72 : 56; // Slightly larger initial height for better visibility
+  // const headerFontSize = isScrollingUp ? '1.5rem' : '1.25rem';
+  // const logoSize = isScrollingUp ? '2.5rem' : '2rem';
+  // const paddingY = isScrollingUp ? '1rem' : '0.75rem'; // Adjust padding for the height change
 
   const menuItems = [
     // { name: 'Gallery', href: '#gallery' }, 
     { name: 'Reserve', href: '/reserve' },
-    { name: 'FAQ', href: '#faq' },
+    // { name: 'FAQ', href: '#faq' },
 
     // { name: 'About', href: '/about' },
-    { name: 'Contact', href: '#/contact' },
+    { name: 'Contact', href: '#contact' },
   ]
 
   const isActive = (href: string) => {
@@ -70,7 +70,7 @@ export default function Header() {
           
           // Detect scroll direction (with a small threshold to prevent jitter)
           if (Math.abs(currentScroll - lastScrollTop) > 5) {
-            setIsScrollingUp(currentScroll < lastScrollTop);
+            // setIsScrollingUp(currentScroll < lastScrollTop);
             lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
           }
           
@@ -113,11 +113,6 @@ export default function Header() {
                 onClick={() => handleNavigation(item.href)}
                 className={`text-content-primary hover:text-content-secondary transition-colors relative py-2
                   ${isActive(item.href) ? 'text-content-secondary' : ''}
-                  after:content-[''] after:absolute after:bottom-0 after:left-0 
-                  after:w-full after:h-0.5 after:bg-gradient-to-r 
-                  after:from-primary after:to-accent
-                  after:scale-x-0 after:origin-left after:transition-transform
-                  ${isActive(item.href) ? 'after:scale-x-100' : 'hover:after:scale-x-100'}
                 `}
               >
                 {item.name}

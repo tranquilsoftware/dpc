@@ -132,7 +132,7 @@ const Footer = () => {
       <div className="border-t border-border">
         <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row justify-between items-center">
           <p className="text-content-tertiary text-sm text-center sm:text-left mb-2 sm:mb-0">
-            {new Date().getFullYear()} {BRAND_NAME}. All rights reserved.
+            &copy; {new Date().getFullYear()} {BRAND_NAME}. All rights reserved.
           </p>
           <p className="text-content-tertiary text-sm">
             Made by{' '}

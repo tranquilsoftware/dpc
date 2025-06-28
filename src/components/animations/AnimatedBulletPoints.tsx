@@ -1,4 +1,3 @@
-import { ReactNode } from 'react';
 import { ScrollAnimation } from './ScrollAnimation';
 
 interface AnimatedBulletPointsProps {

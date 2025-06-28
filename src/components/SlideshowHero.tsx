@@ -4,26 +4,26 @@ import { BRAND_NAME, BRIEF_DESCRIPTION, TWO_DOTS } from '../globals' //, LOGO
 
 // Local images from public/assets/images/
 const heroImages = [
-  '/assets/images/0.jpg',
-  '/assets/images/1.jpg',
-  '/assets/images/2.jpg',
-  '/assets/images/3.jpg',
-  '/assets/images/4.jpg',
-  '/assets/images/5.jpg',
-  '/assets/images/7.jpg',
-  '/assets/images/8.jpg'
+  '/dpc/assets/images/0.jpg',
+  '/dpc/assets/images/1.jpg',
+  '/dpc/assets/images/2.jpg',
+  '/dpc/assets/images/3.jpg',
+  '/dpc/assets/images/4.jpg',
+  '/dpc/assets/images/5.jpg',
+  '/dpc/assets/images/7.jpg',
+  '/dpc/assets/images/8.jpg'
   // '/assets/images/dave.jpg'
 ]
 
 const variants = {
-  enter: (direction: number) => ({
+  enter: (/*direction: number*/) => ({
     opacity: 0,
   }),
   center: {
     zIndex: 1,
     opacity: 1,
   },
-  exit: (direction: number) => ({
+  exit: (/*direction: number*/) => ({
     zIndex: 0,
     opacity: 0,
   })
