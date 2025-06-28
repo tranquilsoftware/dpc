@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <script>
+      // Get the current path and redirect to index.html with the path
+      const path = window.location.pathname;
+      const search = window.location.search;
+      const hash = window.location.hash;
+      
+      // Remove the base path if it exists
+      const basePath = '/dpc';
+      let newPath = path;
+      if (path.startsWith(basePath)) {
+        newPath = path.substring(basePath.length);
+      }
+      
+      // Redirect to index.html with the path
+      window.location.href = `${basePath}/index.html${newPath}${search}${hash}`;
+    </script>
+    <meta http-equiv="refresh" content="0; URL='/dpc/index.html'" />
+  </head>
+  <body>
+    <p>Redirecting... If you are not redirected, <a href="/dpc/index.html">click here</a>.</p>
+  </body>
+</html>
