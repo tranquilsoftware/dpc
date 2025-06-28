@@ -1,0 +1,7 @@
+@font-face { /* metal font https://www.fontspace.com/ft-vortex-font-f123347 */
+    font-family: 'Bellefair';
+    src: url('/assets/fonts/Bellefair-Regular.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
